@@ -60,14 +60,17 @@ public class timesheetsTest {
         // Wait for a while
         Thread.sleep(10000);
 
-        timesheetsPOM.timesheetbtn();
+        timesheetsPOM.timesheetbtn(); //Current Week
         Thread.sleep(3000);
 
-        //timesheetsPOM.previousweek();
-        //Thread.sleep(3000);
-        //timesheetsPOM.previousweek();
-        //Thread.sleep(3000);
-
+        timesheetsPOM.previousweek(); //One week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Two week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Three week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Four week before
+        Thread.sleep(3000);
 
         // Perform logout
         efficonXLoginPOM.options();
