@@ -1,12 +1,10 @@
 package WebDriver;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class webdriverSetup {
-    private String baseUrl = "https://efficonx.com";
+    private String baseUrl = "https://dev.efficonx.com";
     protected static WebDriver driver;
     private static webdriverSetup driverManager;
 
@@ -19,16 +17,12 @@ public class webdriverSetup {
         return driverManager;
     }
 
-
     // Initialize the WebDriver
     public void webdriverSetup() {
         try {
             System.out.println("Setting up WebDriver...");
             String fireFoxDriverPath = "src/test/resources/drivers/geckodriver.exe"; // Adjust path as necessary
             System.setProperty("webdriver.gecko.driver", fireFoxDriverPath);
-//            ChromeOptions options = new ChromeOptions();
-//            // If Chrome is in a non-standard location, set the binary path
-//            options.setBinary("C:/Program Files/Google/Chrome/Application/chrome.exe"); // Replace with your Chrome path if different
             driver = new FirefoxDriver();
             System.out.println("WebDriver initialized: " + (driver != null));
         } catch (Exception e) {
@@ -54,12 +48,18 @@ public class webdriverSetup {
         }
     }
 
+    // Overloaded method for no-argument version
+    public void loadBaseUrl() throws InterruptedException {
+        loadBaseUrl(null); // Use default URL if none provided
+    }
+
     // Quit the WebDriver
     public void quitDriver() {
         if (driver != null) {
             System.out.println("Quitting WebDriver...");
             driver.quit();
             driver = null; // Reset driver to null after quitting
+            System.out.println("WebDriver quit and reset to null.");
         }
     }
 }
