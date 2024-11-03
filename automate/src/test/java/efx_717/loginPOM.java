@@ -36,4 +36,17 @@ public class loginPOM extends WebDriver.webdriverSetup {
     public static void SubmitOTP() {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
+
+    public static void openDropdown() {
+        driver.findElement(By.xpath("//div[@class='select__indicator select__dropdown-indicator css-qj08tm-indicatorContainer']")).click();
+    }
+    public static void selectRole(){
+        driver.findElement(By.xpath("//div[contains(@class, 'select__option') and contains(@class, 'css-6ie4tr-option') and text()='Admin']")).click();
+    }
+    public static void SubmitRole(){
+        driver.findElement(By.xpath("//button[normalize-space()='Submit']")).click();
+    }
+    public static void Dashboard(){
+        driver.findElement(By.xpath("//li[@class='nav-item']/a[@href='/Dashboard' and contains(@class, 'active')]/span[text()='Dashboard']")).click();
+    }
 }

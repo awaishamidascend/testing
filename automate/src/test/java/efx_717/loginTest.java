@@ -53,7 +53,15 @@ public class loginTest {
         Thread.sleep(3000); // Wait for OTP input to complete (use WebDriverWait if possible)
         loginPOM.SubmitOTP(); // Submit OTP
         Thread.sleep(3000); // Wait for OTP input to complete (use WebDriverWait if possible)
-//rida test 3 nov
+        // Open the dropdown and select a role
+        loginPOM.openDropdown();          // Opens the dropdown
+        Thread.sleep(3000); // Consider replacing with WebDriverWait
+        loginPOM.selectRole();  // Selects "Engineer" from the dropdown
+        Thread.sleep(3000);
+        loginPOM.SubmitRole();
+        Thread.sleep(3000);
+        loginPOM.Dashboard();
+
     }
 
 
