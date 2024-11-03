@@ -53,7 +53,7 @@ public class loginTest {
         Thread.sleep(3000); // Wait for OTP input to complete (use WebDriverWait if possible)
         loginPOM.SubmitOTP(); // Submit OTP
         Thread.sleep(3000); // Wait for OTP input to complete (use WebDriverWait if possible)
-
+//rida test 3 nov
     }
 
 
