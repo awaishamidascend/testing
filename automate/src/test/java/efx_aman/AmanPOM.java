@@ -83,8 +83,15 @@ public class AmanPOM extends WebDriver.webdriverSetup {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
 
+    public static void search() {
 
+        driver.findElement(By.xpath("//input[@placeholder='Search in the list']")).sendKeys("jizan");
 
+    }
+    public static void filter() {
+
+        driver.findElement(By.xpath("//input[@placeholder='Filter Date']")).click();
+
+    }
 }
-
 

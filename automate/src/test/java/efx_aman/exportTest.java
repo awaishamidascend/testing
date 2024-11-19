@@ -66,10 +66,6 @@ public class exportTest {
             AmanPOM.logout();
             // Wait for a while
             Thread.sleep(10000);
-
-
-
-
         }
 
         @AfterAll

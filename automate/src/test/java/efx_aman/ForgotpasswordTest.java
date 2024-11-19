@@ -20,7 +20,7 @@ public class ForgotpasswordTest {
         setupClass.webdriverSetup();
         setupClass.loadBaseUrl();
     }
-//A
+
     // Method source to provide user data from the JSON class
     public static Stream<AmanVO> setUpData() {
         return json.setUpData();  // Call the setUpData method from the Json class
