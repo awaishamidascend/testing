@@ -1,10 +1,9 @@
-package test.automate;
+package efficonx_timesheets;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-
-public class efficonXLoginPOM extends WebDriver.webdriverSetup {
+public class timesheetsPOM extends WebDriver.webdriverSetup{
 
     public static void username(String username) {
 
@@ -25,16 +24,14 @@ public class efficonXLoginPOM extends WebDriver.webdriverSetup {
         driver.findElement(By.xpath("(//button[@class='btn'])[1]")).click();
     }
 
-    public static void options() {
+    public static void timesheetbtn() {
 
-        driver.findElement(By.xpath("(//*[name()='svg'][@type='button'])[1]")).click();
-
+        driver.findElement(By.xpath("//span[contains(text(),'Timesheets')]")).click();
     }
 
-    public static void logout() {
+    public static void previousweek() {
 
-        driver.findElement(By.xpath("(//a[normalize-space()='Logout'])[1]")).click();
-
+        driver.findElement(By.xpath("//div[@class='weekContainer']//div[1]//*[name()='svg']//*[name()='path' and contains(@fill,'currentCol')]")).click();
     }
 
 }

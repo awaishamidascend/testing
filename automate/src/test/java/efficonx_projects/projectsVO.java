@@ -1,11 +1,11 @@
-package efx_projects;
+package efficonx_projects;
 
 import java.util.List;
 
 public class projectsVO {
 
-    private List<efx_projects.projectsVO> Users;
-    public List<efx_projects.projectsVO> getUsers() {
+    private List<efficonx_projects.projectsVO> Users;
+    public List<efficonx_projects.projectsVO> getUsers() {
         return Users;
     }
 
@@ -26,7 +26,7 @@ public class projectsVO {
         this.password = password;
     }
 
-    public void setUsers(List<efx_projects.projectsVO> users) {
+    public void setUsers(List<efficonx_projects.projectsVO> users) {
         Users = users;
     }
 }

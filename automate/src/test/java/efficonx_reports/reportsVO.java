@@ -1,11 +1,11 @@
-package efx_reports;
+package efficonx_reports;
 
 import java.util.List;
 
 public class reportsVO {
 
-    private List<efx_reports.reportsVO> Users;
-    public List<efx_reports.reportsVO> getUsers() {
+    private List<efficonx_reports.reportsVO> Users;
+    public List<efficonx_reports.reportsVO> getUsers() {
         return Users;
     }
 
@@ -26,7 +26,7 @@ public class reportsVO {
         this.password = password;
     }
 
-    public void setUsers(List<efx_reports.reportsVO> users) {
+    public void setUsers(List<efficonx_reports.reportsVO> users) {
         Users = users;
     }
 }

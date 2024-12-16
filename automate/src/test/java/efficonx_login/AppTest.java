@@ -1,4 +1,4 @@
-package test.automate;
+package efficonx_login;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

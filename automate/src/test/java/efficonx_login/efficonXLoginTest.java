@@ -1,20 +1,17 @@
-package efx_reports;
+package efficonx_login;
 
 import WebDriver.webdriverSetup;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.stream.Stream;
 
-public class reportTest {
+public class efficonXLoginTest {
 
     private static webdriverSetup setupClass;
 
@@ -27,13 +24,13 @@ public class reportTest {
         setupClass.loadBaseUrl();
     }
 
-    public static Stream<reportsVO> setUpData() {
+    public static Stream<efficonXLoginVO> setUpData() {
 
         // Read credentials from JSON file using Gson
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("jsons/Users/Users_reports.json")) {
+        try (FileReader reader = new FileReader("jsons/Users/Users.json")) {
             // Deserialize into UsersWrapper
-            reportsVO wrapper = gson.fromJson(reader, reportsVO.class);
+            efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
             // Return the stream of users
             return wrapper.getUsers().stream();
         } catch (IOException e) {
@@ -44,21 +41,21 @@ public class reportTest {
 
     @ParameterizedTest(name = "{0}")
     @MethodSource("setUpData")
-    public void testLoginAndLogout(reportsVO obj_reporterVO) throws InterruptedException {
-        System.out.println("Executing test with user: " + obj_reporterVO.getUsername());
+    public void testLoginAndLogout(efficonXLoginVO obj_efficonXVO) throws InterruptedException {
+        System.out.println("Executing test with user: " + obj_efficonXVO.getUsername());
 
         // Perform login
-        reportsPOM.username(obj_reporterVO.getUsername());
-        reportsPOM.password(obj_reporterVO.getPassword());
+        efficonXLoginPOM.username(obj_efficonXVO.getUsername());
+        efficonXLoginPOM.password(obj_efficonXVO.getPassword());
         Thread.sleep(3000);
-        reportsPOM.submit();
+        efficonXLoginPOM.submit();
 
         // Wait for a while
         Thread.sleep(10000);
 
         // Perform logout
-        reportsPOM.reports();
-        reportsPOM.export();
+        efficonXLoginPOM.options();
+        efficonXLoginPOM.logout();
 
         // Wait before finishing the test
         Thread.sleep(5000);

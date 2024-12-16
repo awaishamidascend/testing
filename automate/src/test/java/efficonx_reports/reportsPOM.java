@@ -1,4 +1,4 @@
-package efx_reports;
+package efficonx_reports;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

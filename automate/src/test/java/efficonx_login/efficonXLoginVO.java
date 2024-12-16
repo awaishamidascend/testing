@@ -1,4 +1,4 @@
-package test.automate;
+package efficonx_login;
 
 import java.util.List;
 

@@ -5,8 +5,8 @@ import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import test.automate.efficonXLoginPOM;
-import test.automate.efficonXLoginVO;
+import efficonx_login.efficonXLoginPOM;
+import efficonx_login.efficonXLoginVO;
 
 
 import java.io.FileReader;

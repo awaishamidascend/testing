@@ -1,20 +1,19 @@
-package efx_projects;
+package efficonx_timesheets;
 
 import WebDriver.webdriverSetup;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
+import efficonx_login.efficonXLoginPOM;
+import efficonx_login.efficonXLoginVO;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.stream.Stream;
 
-public class projectsTest {
+public class timesheetsTest {
 
     private static webdriverSetup setupClass;
 
@@ -24,16 +23,18 @@ public class projectsTest {
         System.out.println("BeforeAll: Initializing WebDriver");
         setupClass = webdriverSetup.getInstance();
         setupClass.webdriverSetup();
-        setupClass.loadBaseUrl();
+        // For this specific test, load the custom URL
+        setupClass.loadBaseUrl("https://efficonx.com/");
     }
 
-    public static Stream<projectsVO> setUpData() {
+
+    public static Stream<efficonXLoginVO> setUpData() {
 
         // Read credentials from JSON file using Gson
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("jsons/Users/Users_projects.json")) {
+        try (FileReader reader = new FileReader("jsons/Users/efx_users.json")) {
             // Deserialize into UsersWrapper
-            projectsVO wrapper = gson.fromJson(reader, projectsVO.class);
+            efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
             // Return the stream of users
             return wrapper.getUsers().stream();
         } catch (IOException e) {
@@ -44,21 +45,33 @@ public class projectsTest {
 
     @ParameterizedTest(name = "{0}")
     @MethodSource("setUpData")
-    public void testLoginAndLogout(projectsVO obj_reporterVO) throws InterruptedException {
-        System.out.println("Executing test with user: " + obj_reporterVO.getUsername());
+    public void testLoginAndLogout(efficonXLoginVO obj_efficonXVO) throws InterruptedException {
+        System.out.println("Executing test with user: " + obj_efficonXVO.getUsername());
 
         // Perform login
-        projectsPOM.username(obj_reporterVO.getUsername());
-        projectsPOM.password(obj_reporterVO.getPassword());
+        efficonXLoginPOM.username(obj_efficonXVO.getUsername());
+        efficonXLoginPOM.password(obj_efficonXVO.getPassword());
         Thread.sleep(3000);
-        projectsPOM.submit();
+        efficonXLoginPOM.submit();
 
         // Wait for a while
         Thread.sleep(10000);
 
-        // Perform Project Creation
-        projectsPOM.projects();
-        projectsPOM.create_projects();
+        timesheetsPOM.timesheetbtn(); //Current Week
+        Thread.sleep(3000);
+
+        timesheetsPOM.previousweek(); //One week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Two week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Three week before
+        Thread.sleep(3000);
+        timesheetsPOM.previousweek(); //Four week before
+        Thread.sleep(3000);
+
+        // Perform logout
+        efficonXLoginPOM.options();
+        efficonXLoginPOM.logout();
 
         // Wait before finishing the test
         Thread.sleep(5000);
@@ -73,3 +86,4 @@ public class projectsTest {
         }
     }
 }
+
