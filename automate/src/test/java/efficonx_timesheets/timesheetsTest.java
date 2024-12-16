@@ -32,7 +32,7 @@ public class timesheetsTest {
 
         // Read credentials from JSON file using Gson
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("jsons/Users/efx_users.json")) {
+        try (FileReader reader = new FileReader("jsons/Users/efficonx_all_users.json")) {
             // Deserialize into UsersWrapper
             efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
             // Return the stream of users
