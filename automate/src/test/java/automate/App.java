@@ -1,4 +1,4 @@
-package test.automate;
+package automate;
 
 /**
  * Hello world!
