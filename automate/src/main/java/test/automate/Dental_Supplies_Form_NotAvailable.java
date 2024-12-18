@@ -184,7 +184,7 @@ public class Dental_Supplies_Form_NotAvailable {
 
 
 		// Nested loop for dropdown selection
-		for (int i = 0; i <= 36; i++) {
+		for (int i = 0; i <= 75; i++) {
 
 			WebElement rowXPath2 = wait1.until(ExpectedConditions.presenceOfElementLocated(By.id("row-" + i)));
 			System.out.println(rowXPath2);
@@ -249,7 +249,7 @@ public class Dental_Supplies_Form_NotAvailable {
 		WebDriverWait Wait3 = new WebDriverWait(driver, Duration.ofSeconds(2)); // Explicit wait
 		System.out.println("Clicked on fourth module");
 		// Nested loop for dropdown selection
-		for (int k = 0; k <= 55; k++) {
+		for (int k = 0; k <= 37; k++) {
 
 			WebElement rowXPath3 = wait1.until(ExpectedConditions.presenceOfElementLocated(By.id("row-" + k)));
 			System.out.println(rowXPath3);
@@ -312,7 +312,7 @@ public class Dental_Supplies_Form_NotAvailable {
 		WebDriverWait Wait4 = new WebDriverWait(driver, Duration.ofSeconds(2)); // Explicit wait
 		System.out.println("Clicked on fourth module");
 		// Nested loop for dropdown selection
-		for (int r = 0; r <= 4; r++) {
+		for (int r = 0; r <= 5; r++) {
 
 			WebElement rowXPath4 = wait1.until(ExpectedConditions.presenceOfElementLocated(By.id("row-" + r)));
 			System.out.println(rowXPath4);
@@ -430,6 +430,12 @@ public class Dental_Supplies_Form_NotAvailable {
 			stockOnHandField5.sendKeys("300");
 			System.out.println("Entered text '300' in 'Stock On Hand' text field for row: " + m);
 		}
+		
+		// Clicking on submit
+				
+				driver.findElement(By.xpath("(//button[normalize-space()='Submit'])[1]")).click();
+				System.out.println("Form submitted");
+				Thread.sleep(2000);
 
 	}
 
