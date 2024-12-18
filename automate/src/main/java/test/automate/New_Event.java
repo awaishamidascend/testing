@@ -71,9 +71,11 @@ public class New_Event {
 
         Thread.sleep(3000);
         
-     // Click on the dropdown to expand it
-        driver.findElement(By.xpath("(//div)[69]")).click();
+     // Click on the event type dropdown to expand it
+        //driver.findElement(By.xpath("//div[@class='mb-1 col-sm-12 col-md-6']//div[@class='select__value-container select__value-container--has-value css-1d8n9bt']//div[@class='select__input-container css-ackcql']")).click();
+        driver.findElement(By.xpath("(//div[@aria-hidden='true'])[3]")).click();
         System.out.println("Dropdown clicked");
+        
 
         // Wait for the option to be visible
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -89,7 +91,7 @@ public class New_Event {
         System.out.println("2nd dropdown clicked");
         Thread.sleep(1000); 
       //event selected
-        driver.findElement(By.xpath("//input[@id='check' and @name='check' and @type='checkbox']")).click();
+        driver.findElement(By.xpath("(//div[contains(text(),'Legionnaire’s disease outbreak')])[1]")).click();
         System.out.println("slect event");
         Thread.sleep(1000);
         
@@ -103,7 +105,7 @@ public class New_Event {
         System.out.println("value selected 3rd dropdown");
         Thread.sleep(1000);
  
-        
+       //Date of detection* 
 		WebElement date = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder='Date'])[1]")));
         System.out.println("Detected Calender Box");
         date.click();
@@ -187,43 +189,100 @@ public class New_Event {
         
       //next button/page 2
         WebElement nextpage2 = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button' and contains(@class, 'next-btn')]/span[text()='Next']")));
-        System.out.println("next button detected");      
+        System.out.println("next button detected");
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", nextpage2);
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// Scroll to the bottom of the page
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-
 	    nextpage2.click();
 	    
-        //page 2 
-	    
-	    JavascriptExecutor js1 = (JavascriptExecutor) driver;
-	    // Scroll to the top of the page
-	    js1.executeScript("window.scrollTo(0, 0);");
-		Thread.sleep(2000);
+          //page 2 
+//	    WebDriverWait wait7 = new WebDriverWait(driver, Duration.ofSeconds(10));
+//
+//	 // If inside a frame, switch to it
+//	 // driver.switchTo().frame("frameNameOrId");
+//
+//
+//	     WebElement calendarDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='calendar']")));
+//	     // Proceed with actions on calendarDiv
+//
+//	     System.out.println("Calendar div not visible");
+//	 // Debugging
+//	 List<WebElement> elements = driver.findElements(By.xpath("//div[@class='calendar']"));
+//	 System.out.println("Number of calendar elements found: " + elements.size());
 
-        //Date of detection*
-		
-		// Click on the date input to open the calendar
-		WebElement calendarBox = driver.findElement(By.xpath("(//input[@placeholder='yyyy-mm-dd | 24:45'])[1]"));
-		calendarBox.click();
-		System.out.println("Calendar opened");
-
-		// Wait for the calendar to be fully loaded and then attempt to click the date
-		WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement dateElement1 = wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[5]/div[2]/div[1]/div[2]")));
-		dateElement1.click();
-
-		Thread.sleep(3000); // Adjust timing as needed
-
-		
+	  	
 		//Detection Narrative
         driver.findElement(By.xpath("//textarea[@placeholder='Type Here']")).sendKeys("Narrative");
         System.out.println("text enetered (2) ");
-        //push
-        //comment 
+        
+        //Detection Bottlenecks dropdown
+        driver.findElement(By.xpath("(//div[@class='select__indicator select__dropdown-indicator css-qj08tm-indicatorContainer'])[10]")).click();
+        System.out.println("dropdown clicked ");
+
+        //value select for detetction bottlenecks
+        driver.findElement(By.xpath("(//div[contains(text(),'Data entry delay')])[1]")).click();
+        System.out.println("dropdown clicked ");
 		
+        //Detection Enablers
+        driver.findElement(By.xpath("(//input[@placeholder='Detection Enablers'])[1]")).sendKeys("check 123");
+        System.out.println("text enetered");
+        
+        //next button/page 3
+        driver.findElement(By.xpath("//button[@type='button' and contains(@class, 'waves-effect') and contains(@class, 'next-btn') and contains(@class, 'btn-primary')]//span[text()='Next']")).click();
+        System.out.println("Next button clicked");
+        
+        //page 3
+        
+//
+//        //Date of detection* 
+// 		WebElement date3 = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder='Date'])[1]")));
+//         System.out.println("Detected Calender Box");
+//         date3.click();
+// 		WebElement dateElement3 = driver.findElement(By.xpath("(//span[@aria-label='September 12, 2024'][normalize-space()='12'])[1]"));
+// 		System.out.println("Detected date");
+// 		dateElement3.click();
+// 		//((JavascriptExecutor) driver).executeScript("arguments[0].click();", dateElement);
+// 		Thread.sleep(2000);
+ 		
+ 		//Notification Narrative
+        driver.findElement(By.xpath("(//textarea[@placeholder='Notification Narrative'])[1]")).sendKeys("notify");
+        System.out.println("text enetered");
+        
+      //Notification Enablers
+        driver.findElement(By.xpath("(//textarea[@placeholder='Notification Enablers'])[1]")).sendKeys("enable");
+        System.out.println("text enetered");
+        
+        //Notification Bottlenecks*
+        driver.findElement(By.xpath("(//div[@class='select__indicator select__dropdown-indicator css-qj08tm-indicatorContainer'])[11]")).click();
+        System.out.println("dropdown clicked");
+    	Thread.sleep(1000);
+      //Notification Bottlenecks value*
+        driver.findElement(By.xpath("(//div[contains(text(),'Lack of clinical surveillance capacity')])[1]")).click();
+        System.out.println("value selected");
+    	Thread.sleep(1000);
+        
+      //Notification Source dropdown
+        driver.findElement(By.xpath("//div[contains(@class, 'select__control')]//input[@id='react-select-12-input']")).click();
+        System.out.println("dropdown clicked");
+    	Thread.sleep(1000);
+        
+      //Notification Source value
+        driver.findElement(By.xpath("//div[@class='select__option css-yt9ioa-option' and text()='Health facilities']")).click();
+        System.out.println("value selected");
+    	Thread.sleep(1000);
+    	
+    	//Event Occurrence at Notification dropdown
+        driver.findElement(By.xpath("(//div[@class='select__indicator select__dropdown-indicator css-qj08tm-indicatorContainer'])[13]")).click();
+        System.out.println("dropdown clicked");
+    	Thread.sleep(1000);
+    	
+    	//Event Occurrence at Notification value
+        driver.findElement(By.xpath("//div[@class='select__option css-yt9ioa-option' and text()='Verified']")).click();
+        System.out.println("value selected");
+    	Thread.sleep(1000);
+    	
 	}}
 
 
