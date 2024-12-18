@@ -2,11 +2,15 @@ package efficonx_projects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.format.DateTimeFormatter;
+
 
 import java.time.Duration;
+import java.time.LocalDate;
 
 
 public class projectsPOM extends WebDriver.webdriverSetup {
@@ -53,30 +57,63 @@ public class projectsPOM extends WebDriver.webdriverSetup {
         //Entering Code
         WebElement code = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@id='code'])[1]")));
         code.sendKeys("555");
+        Thread.sleep(2000);
 
-        //Entering Date
-        WebElement date = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@id='date'])[1]")));
-        //date.click();
-        System.out.println("Clicked Date");
-        Thread.sleep(3000);
+        //(JavascriptExecutor) driver).executeScript("arguments[0].value = '12092024';", date);
+        //date.sendKeys("12092024");
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].value = '12/09/2024';", date);
-        date.sendKeys("12092024");
+        // Entering Start Date
+        WebElement startDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='date']")));
+        String jsFormattedStartDate = "2024-09-12"; // yyyy-MM-dd format
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = arguments[1];", startDate, jsFormattedStartDate);
+        System.out.println("Start Date set using JS Executor: " + jsFormattedStartDate);
+        Thread.sleep(2000);
 
-        date.sendKeys("11111111");
-        System.out.println("Entered Date");
+        // Entering End Date
+        WebElement endDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Enddate']")));
+        String jsFormattedEndDate = "2025-12-12"; // yyyy-MM-dd format
+        js.executeScript("arguments[0].value = arguments[1];", endDate, jsFormattedEndDate);
+        System.out.println("End Date set using JS Executor: " + jsFormattedEndDate);
+        Thread.sleep(2000);
 
-        //Entering Client
-        WebElement client = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder='Select client'])[1]")));
+        // Entering Client
+        WebElement client = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Select client']")));
         client.click(); // Click to open the dropdown
-        client.sendKeys("NUPCO");
-        System.out.println("Sent keys NUPCO");
+        System.out.println("Clicked Dropdown");
+
+        Thread.sleep(2000);
+        WebElement drop = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@aria-controls='listbox-null']")));
+
+        // Find the search field within the dropdown (assuming it's an input element)
+        drop.sendKeys("NPHIES"); // Type the client name
+        System.out.println("Sent keys NPHIES");
+
+        // Press Enter to select the option
+        drop.sendKeys(Keys.ENTER);
+
+        System.out.println("Pressed Enter");
 
         // Wait for the option to become visible and clickable
-        WebElement optionToSelect = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[2]/div[2]/input[1]")));
+        WebElement optionToSelect = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[normalize-space()='Select Project Owner'])[1]")));
         // Click the option once it's visible
         optionToSelect.click();
-        System.out.println("Opened New Projects");
+        System.out.println("Opened Project Owner");
+
+        Thread.sleep(2000);
+        WebElement drop1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Select Project Owner' and @class='multiselect__input' and @aria-controls='listbox-null']")));
+
+        // Find the search field within the dropdown (assuming it's an input element)
+        drop1.sendKeys("Awais Hamid"); // Type the client name
+        System.out.println("Sent keys Awais Hamid");
+
+        // Press Enter to select the option
+        drop1.sendKeys(Keys.ENTER);
+
+        System.out.println("Pressed Enter");
+
+        driver.findElement(By.xpath("(//button[@class='btn btn-size'])[1]")).click();
+
 
     }
 
