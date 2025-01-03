@@ -62,6 +62,25 @@ public class projectsPOM extends WebDriver.webdriverSetup {
         //(JavascriptExecutor) driver).executeScript("arguments[0].value = '12092024';", date);
         //date.sendKeys("12092024");
 
+        //On change method of entering date
+
+        // Step 1: Locate and click the calendar icon to open the date picker
+        WebElement calendarIcon = driver.findElement(By.xpath("//input[@id='date']"));
+        calendarIcon.click();
+
+        // Step 2: Wait for the calendar to appear
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'calendar-container')]")));
+
+        // Step 3: Select the desired date (e.g., 15th of the current month)
+        WebElement desiredDate = driver.findElement(By.xpath("//td[@aria-label='Choose Friday, December 15th, 2024']"));
+        desiredDate.click();
+
+        // Step 4: Verify if the date has been set (optional)
+        String enteredDate = calendarIcon.getAttribute("value");
+        System.out.println("Selected Date: " + enteredDate);
+
+
         // Entering Start Date
         WebElement startDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='date']")));
         String jsFormattedStartDate = "2024-09-12"; // yyyy-MM-dd format
