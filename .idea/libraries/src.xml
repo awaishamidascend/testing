@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/automate/Test/src" />
+      <root url="file://$PROJECT_DIR$/automate/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
