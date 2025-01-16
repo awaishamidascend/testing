@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb04ff40-a808-44c3-b5a7-25c029b6fcf9" name="Changes" comment="12 Jan 2025" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="IntelliJ" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;awaishamidascend&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/awaishamidascend/ascend_sqa.git&quot;,
+    &quot;accountId&quot;: &quot;5dfaa17d-d1f7-4d60-ad20-21aacd3bae7c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2rW7gF1GhL6gnS8PrxOS4ZsTD3o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit..executor": "Run",
+    "JUnit.AppTest.executor": "Run",
+    "JUnit.Unnamed.executor": "Run",
+    "JUnit.efficonXLoginTest.executor": "Run",
+    "JUnit.efficonx_login in ascend_sqa.executor": "Run",
+    "JUnit.efficonx_login in selenium-java.executor": "Run",
+    "JUnit.efficonx_login.executor": "Run",
+    "JUnit.projectsTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HamidAwais(Ascend)/IdeaProjects/ascend_sqa",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.efficonXLoginTest">
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="efficonx_login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="efficonx_login" />
+      <option name="MAIN_CLASS_NAME" value="efficonx_login.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="efficonXLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="efficonx_login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="efficonx_login" />
+      <option name="MAIN_CLASS_NAME" value="efficonx_login.efficonXLoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projectsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="efficonx_projects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="efficonx_projects" />
+      <option name="MAIN_CLASS_NAME" value="efficonx_projects.projectsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.efficonXLoginTest" />
+      <item itemvalue="JUnit.projectsTest" />
+      <item itemvalue="JUnit.AppTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.efficonXLoginTest" />
+        <item itemvalue="JUnit.projectsTest" />
+        <item itemvalue="JUnit.AppTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb04ff40-a808-44c3-b5a7-25c029b6fcf9" name="Changes" comment="" />
+      <created>1736663087547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736663087547</updated>
+    </task>
+    <task id="LOCAL-00001" summary="12 Jan 2025">
+      <option name="closed" value="true" />
+      <created>1736682892983</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736682892983</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="12 Jan 2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="12 Jan 2025" />
+  </component>
+</project>
