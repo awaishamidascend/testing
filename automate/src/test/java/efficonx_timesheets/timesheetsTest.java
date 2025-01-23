@@ -55,11 +55,11 @@ public class timesheetsTest {
         efficonXLoginPOM.submit();
 
         // Wait for a while
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         timesheetsPOM.timesheetbtn(); //Current Week
-        Thread.sleep(3000);
-
+        Thread.sleep(9000);
+        /*
         timesheetsPOM.previousweek(); //One week before
         Thread.sleep(3000);
         timesheetsPOM.previousweek(); //Two week before
@@ -67,7 +67,7 @@ public class timesheetsTest {
         timesheetsPOM.previousweek(); //Three week before
         Thread.sleep(3000);
         timesheetsPOM.previousweek(); //Four week before
-        Thread.sleep(3000);
+        Thread.sleep(3000);*/
 
         // Perform logout
         efficonXLoginPOM.options();
