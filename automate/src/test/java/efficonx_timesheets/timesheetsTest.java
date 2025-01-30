@@ -58,7 +58,7 @@ public class timesheetsTest {
         Thread.sleep(5000);
 
         timesheetsPOM.timesheetbtn(); //Current Week
-        Thread.sleep(9000);
+        Thread.sleep(15000);
         /*
         timesheetsPOM.previousweek(); //One week before
         Thread.sleep(3000);
