@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/automate/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/Base/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/utils/WebDriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/src/main/java/test/automate/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../automate/src/test/java/test/automate/AppTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MudassarIqbal-Ascend&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/awaishamidascend/ascend_sqa.git&quot;,
+    &quot;accountId&quot;: &quot;cb7c448d-d246-4f48-9d0b-02b6c1e57f81&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2t78fZ7HfeGyEzXUHvN4XS5LmOC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.App.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JUnit.AppTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml.executor": "Run",
+    "TestNG.CreateRoomTest.executor": "Run",
+    "TestNG.CreateRoomTest.testCreateRoom.executor": "Debug",
+    "TestNG.LoginTest.executor": "Run",
+    "git-widget-placeholder": "mudassar__taftesh",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/src/test/java",
+    "last_opened_file_path": "C:/Users/Mudassar Iqbal/Taftesh",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/automate/target/testing.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="" />
+      <created>1739691856370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739691856370</updated>
+    </task>
+    <servers />
+  </component>
+</project>

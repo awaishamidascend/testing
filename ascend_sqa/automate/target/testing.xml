@@ -1,0 +1,8 @@
+<suite name="TestSuite">
+    <test name="LoginTests">
+        <classes>
+            <class name="test.automate.LoginTest"/>
+            <class name="test.automate.CreateRoomTest"/>
+        </classes>
+    </test>
+</suite>
