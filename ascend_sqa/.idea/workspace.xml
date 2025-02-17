@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/automate/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/Base/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automate/src/main/java/test/utils/WebDriverManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/Jenkinsfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/src/main/java/test/automate/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../automate/src/test/java/test/automate/AppTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="taftesh commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +90,19 @@
       <option name="presentableId" value="Default" />
       <updated>1739691856370</updated>
     </task>
+    <task id="LOCAL-00001" summary="taftesh commit">
+      <option name="closed" value="true" />
+      <created>1739799414193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739799414193</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="taftesh commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="taftesh commit" />
   </component>
 </project>
