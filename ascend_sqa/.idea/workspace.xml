@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="taftesh commit 1" />
+    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="taftesh commit 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.App.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.AppTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml.executor": "Run",
-    "TestNG.CreateRoomTest.executor": "Run",
-    "TestNG.CreateRoomTest.testCreateRoom.executor": "Debug",
-    "TestNG.LoginTest.executor": "Run",
-    "git-widget-placeholder": "mudassar__taftesh",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/src/test/java",
-    "last_opened_file_path": "C:/Users/Mudassar Iqbal/Taftesh",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CreateRoomTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CreateRoomTest.testCreateRoom.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mudassar__taftesh&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mudassar Iqbal/Taftesh&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <option name="SUITE_NAME" value="$PROJECT_DIR$/automate/target/testing.xml" />
@@ -106,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739799455044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="taftesh commit 1">
+      <option name="closed" value="true" />
+      <created>1739799880289</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739799880289</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

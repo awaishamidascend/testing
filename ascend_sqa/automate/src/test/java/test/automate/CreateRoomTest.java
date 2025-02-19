@@ -14,7 +14,7 @@ public class CreateRoomTest extends BaseTest{
         CreateRoomPage create_room = new CreateRoomPage(driver);
         // Add Selenium code here to test "Create Room" feature
         create_room.clickCreateRoom();
-        create_room.Room_creation("@Meeting_Auto", "6");
+        create_room.Room_creation();
     }
 
 //    @AfterClass
