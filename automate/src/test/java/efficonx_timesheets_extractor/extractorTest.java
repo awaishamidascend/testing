@@ -9,11 +9,11 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -21,35 +21,32 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static WebDriver.webdriverSetup.driver;
-
 public class extractorTest {
 
     private static webdriverSetup setupClass;
+    private static Workbook workbook = new XSSFWorkbook();
+    private static Sheet sheet = workbook.createSheet("Projects");
+    private static int rowNum = 0;
+
     @BeforeAll
     public static void setUpClass() throws InterruptedException {
-        // Initialize WebDriver once before all tests
         System.out.println("BeforeAll: Initializing WebDriver");
         setupClass = webdriverSetup.getInstance();
         setupClass.webdriverSetup();
-        // For this specific test, load the custom URL
         setupClass.loadBaseUrl("https://efficonx.com/");
     }
 
     public static Stream<efficonXLoginVO> setUpData() {
-
-        // Read credentials from JSON file using Gson
         Gson gson = new Gson();
         try (FileReader reader = new FileReader("jsons/Users/Users_reports.json")) {
-            // Deserialize into UsersWrapper
             efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
-            // Return the stream of users
             return wrapper.getUsers().stream();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return Stream.empty();
     }
+
     @ParameterizedTest(name = "{0}")
     @MethodSource("setUpData")
     public void testLoginAndLogout(efficonXLoginVO obj_efficonXVO) throws InterruptedException {
@@ -61,23 +58,13 @@ public class extractorTest {
         Thread.sleep(3000);
         efficonXLoginPOM.submit();
 
-        // Wait for a while
         Thread.sleep(5000);
-
-        timesheetsPOM.timesheetbtn(); //Current Week
+        timesheetsPOM.timesheetbtn();
         Thread.sleep(15000);
-        timesheetsPOM.previousweek(); //One week before
+        timesheetsPOM.previousweek();
         Thread.sleep(3000);
-        /*
-        timesheetsPOM.previousweek(); //Two week before
-        Thread.sleep(3000);
-        timesheetsPOM.previousweek(); //Three week before
-        Thread.sleep(3000);
-        timesheetsPOM.previousweek(); //Four week before
-        Thread.sleep(3000);*/
 
-
-        // Extract project names using POM
+        // Extract project names
         List<WebElement> rows = extractorPOM.getProjectRows();
         System.out.println("Projects for user: " + obj_efficonXVO.getUsername());
 
@@ -91,18 +78,14 @@ public class extractorTest {
             excelRow.createCell(1).setCellValue(projectName);
         }
 
-
         // Perform logout
         efficonXLoginPOM.options();
         efficonXLoginPOM.logout();
-
-        // Wait before finishing the test
         Thread.sleep(5000);
     }
 
     @AfterAll
     public static void tearDown() {
-        // Save Excel file
         try (FileOutputStream fileOut = new FileOutputStream("Projects.xlsx")) {
             workbook.write(fileOut);
             workbook.close();
@@ -111,8 +94,7 @@ public class extractorTest {
             e.printStackTrace();
         }
 
-        // Quit the driver after each test
-        System.out.println("AfterEach: Quitting WebDriver");
+        System.out.println("AfterAll: Quitting WebDriver");
         if (setupClass != null) {
             setupClass.quitDriver();
         }
