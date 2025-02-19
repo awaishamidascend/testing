@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class webdriverSetup {
     private String baseUrl = "https://dev.efficonx.com";
-    protected static WebDriver driver;
+    public static WebDriver driver;
     private static webdriverSetup driverManager;
 
     // Singleton pattern to ensure only one instance of webdriverSetup exists

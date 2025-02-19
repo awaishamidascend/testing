@@ -21,6 +21,15 @@
             <version>4.8.0</version>
         </dependency>
 
+            <!-- Apache POI for Excel Handling -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>5.2.3</version> <!-- Latest stable version -->
+            </dependency>
+        </dependencies>
+
+
         <!-- JUnit Jupiter (JUnit 5) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
