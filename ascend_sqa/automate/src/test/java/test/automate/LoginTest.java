@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
         driver.get("https://dev-taftesh.kakashi.app/admin/login");
         LoginPage loginPage = new LoginPage(driver);
         // Perform login
-        loginPage.login("admin@gmail.com", "ascendAdmin@123");
+        loginPage.loginUsingConfig();
 
         // Assertions
         Assert.assertEquals(driver.getTitle(), "Tele-inspection");

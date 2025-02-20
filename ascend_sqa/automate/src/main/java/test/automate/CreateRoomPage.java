@@ -1,16 +1,18 @@
 package test.automate;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import test.utils.ParticipantEmailReader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 public class CreateRoomPage {
     WebDriver driver;
@@ -34,6 +36,9 @@ public class CreateRoomPage {
 
     @FindBy(css = "svg.iconify.iconify--gala.mouse-pointer")
     WebElement plus_button;
+
+    @FindBy(xpath = "//input[@type='email']")
+    List<WebElement> emailfields;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/div[2]/main/form/div/div[2]/button")
     WebElement room_create;
@@ -72,10 +77,37 @@ public class CreateRoomPage {
             plus_button.click();
             System.out.println("Added email field " + (i + 1));
         }
+        wait.until(ExpectedConditions.visibilityOfAllElements(emailfields));
+        System.out.println("Total email fields found: " + emailfields.size());
+
+        // Shuffle the email fields randomly
+        Collections.shuffle(emailfields);
+
+// Put emails in the first two fields from the shuffled list
+        List<String> emails = ParticipantEmailReader.getEmails();
+
+        // Step 1: Read emails from the file
+
+
+        // Step 2: Shuffle and select 2 random emails
+        Collections.shuffle(emails);
+        int emailsToAdd = 2;
+
+        // Step 3: Add emails to random fields
+        for (int i = 0; i < emailfields.size() && i < emailsToAdd; i++) {
+            emailfields.get(i).sendKeys(emails.get(i));
+            System.out.println("Added email to field " + (i+1) + ": " + emails.get(i));
+        }
 
         // Step 4: Click on "Create Room"
+        scrollToElement(create_room);
         waitForElement(room_create);
         room_create.click();
         System.out.println("Room creation process completed.");
+    }
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", element);
+        System.out.println("Scrolled to element.");
     }
 }

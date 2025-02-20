@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test.utils.ConfigReader;
 
 import java.time.Duration;
 
@@ -62,7 +63,16 @@ public class LoginPage {
         clickLoginButton();
     }
 
+    public void loginUsingConfig() {
+        String email = ConfigReader.getProperty("login.email");
+        String password = ConfigReader.getProperty("login.password");
+        System.out.println("Using email: " + email);
+        System.out.println("Using password: " + password);
+        login(email, password);
+    }
+
     public boolean isErrorMessageDisplayed() {
         return errorMessage.isDisplayed();
     }
+
 }
