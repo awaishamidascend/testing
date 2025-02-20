@@ -31,7 +31,11 @@ public class extractorTest {
 
     @BeforeAll
     public static void setUpClass() throws InterruptedException {
-        System.out.println("BeforeAll: Initializing WebDriver");
+        System.out.println("BeforeAll: Initializing WebDriver in headless mode");
+
+        // Manually set headless mode inside the test
+        System.setProperty("headless", "true");
+
         setupClass = webdriverSetup.getInstance();
         setupClass.webdriverSetup();
         setupClass.loadBaseUrl("https://efficonx.com/");
@@ -39,7 +43,7 @@ public class extractorTest {
 
     public static Stream<efficonXLoginVO> setUpData() {
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("jsons/Users/Users.json")) {
+        try (FileReader reader = new FileReader("jsons/Users/All_Users1.json")) {
             efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
             return wrapper.getUsers().stream();
         } catch (IOException e) {
@@ -55,14 +59,14 @@ public class extractorTest {
 
         efficonXLoginPOM.username(obj_efficonXVO.getUsername());
         efficonXLoginPOM.password(obj_efficonXVO.getPassword());
-        Thread.sleep(3000);
+        Thread.sleep(8000);
         efficonXLoginPOM.submit();
 
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         timesheetsPOM.timesheetbtn();
-        Thread.sleep(15000);
+        Thread.sleep(8000);
         timesheetsPOM.previousweek();
-        Thread.sleep(3000);
+        Thread.sleep(8000);
 
         List<WebElement> rows = extractorPOM.getProjectRows();
         System.out.println("Projects for user: " + obj_efficonXVO.getUsername());

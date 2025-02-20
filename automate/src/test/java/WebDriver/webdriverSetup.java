@@ -2,6 +2,7 @@ package WebDriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class webdriverSetup {
     private String baseUrl = "https://dev.efficonx.com";
@@ -23,7 +24,20 @@ public class webdriverSetup {
             System.out.println("Setting up WebDriver...");
             String fireFoxDriverPath = "src/test/resources/drivers/geckodriver.exe"; // Adjust path as necessary
             System.setProperty("webdriver.gecko.driver", fireFoxDriverPath);
-            driver = new FirefoxDriver();
+
+            // Read headless mode from system properties
+            boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
+            // Configure Firefox options
+            FirefoxOptions options = new FirefoxOptions();
+            if (isHeadless) {
+                options.addArguments("--headless");
+                System.out.println("Running WebDriver in headless mode...");
+            }
+
+            options.addArguments("--disable-gpu"); // Recommended for some environments
+
+            driver = new FirefoxDriver(options);
             System.out.println("WebDriver initialized: " + (driver != null));
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,14 +49,14 @@ public class webdriverSetup {
         if (driver != null) {
             if (customUrl != null && !customUrl.isEmpty()) {
                 System.out.println("Loading custom URL: " + customUrl);
-                driver.get(customUrl);  // Load custom URL
+                driver.get(customUrl);
             } else {
                 System.out.println("Loading default base URL: " + baseUrl);
-                driver.get(baseUrl);  // Load default URL
+                driver.get(baseUrl);
             }
             driver.manage().window().maximize();
             System.out.println("Maximized the window.");
-            Thread.sleep(3000);  // Adding a small wait to allow page load
+            Thread.sleep(3000); // Adding a small wait to allow page load
         } else {
             throw new IllegalStateException("WebDriver is not initialized. Please initialize the WebDriver before calling loadBaseUrl().");
         }
@@ -50,7 +64,7 @@ public class webdriverSetup {
 
     // Overloaded method for no-argument version
     public void loadBaseUrl() throws InterruptedException {
-        loadBaseUrl(null); // Use default URL if none provided
+        loadBaseUrl(null);
     }
 
     // Quit the WebDriver
