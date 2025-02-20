@@ -94,7 +94,7 @@ public class extractorTest {
 
             // Create header row
             Row headerRow = sheet.createRow(rowNum++);
-            headerRow.createCell(0).setCellValue("Email");
+            headerRow.createCell(0).setCellValue("Name");
             headerRow.createCell(1).setCellValue("Status");
             headerRow.createCell(2).setCellValue("Projects");
 
