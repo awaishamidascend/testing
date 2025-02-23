@@ -19,7 +19,7 @@ public class CreateTicket {
         WebDriver driver = new ChromeDriver();
         
             System.out.println("Opening the application...");
-            driver.get("https://nhcc.ascend.com.sa/login?isQA=true");
+            driver.get("https://nhcc.ascend.com.sa/");
             driver.manage().window().maximize();
             System.out.println("Application opened.");
             
