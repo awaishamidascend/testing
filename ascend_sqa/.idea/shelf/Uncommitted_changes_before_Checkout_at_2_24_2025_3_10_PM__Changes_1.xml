@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1" date="1740391886875" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2/24/2025 3:10 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="automate/target/classes/test/automate/CreateRoomPage.class" />
+    <option name="AFTER_PATH" value="automate/target/classes/test/automate/CreateRoomPage.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1/CreateRoomPage.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="automate/target/test-classes/test/automate/LoginTest.class" />
+    <option name="AFTER_PATH" value="automate/target/test-classes/test/automate/LoginTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1/LoginTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="automate/target/classes/test/Base/BaseTest.class" />
+    <option name="AFTER_PATH" value="automate/target/classes/test/Base/BaseTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1/BaseTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="automate/target/classes/test/utils/WebDriverManager.class" />
+    <option name="AFTER_PATH" value="automate/target/classes/test/utils/WebDriverManager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_24_2025_3_10_PM_[Changes]1/WebDriverManager.class" />
+  </binary>
+</changelist>

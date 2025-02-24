@@ -1,0 +1,88 @@
+Index: automate/src/test/java/test/automate/GmailJoinMeetingTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/automate/src/test/java/test/automate/GmailJoinMeetingTest.java b/automate/src/test/java/test/automate/GmailJoinMeetingTest.java
+new file mode 100644
+--- /dev/null	(date 1740312047183)
++++ b/automate/src/test/java/test/automate/GmailJoinMeetingTest.java	(date 1740312047183)
+@@ -0,0 +1,65 @@
++package test.automate;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.testng.annotations.AfterClass;
++import org.testng.annotations.BeforeClass;
++import org.testng.annotations.Test;
++import test.Base.BaseTest;
++import test.utils.Meeting_Join;
++
++import java.util.List;
++
++public class GmailJoinMeetingTest  {
++    WebDriver driver;
++
++    @BeforeClass
++    public void setUp() {
++
++        driver = new ChromeDriver();
++        driver.manage().window().maximize();
++        driver.get("https://mail.google.com");
++    }
++
++    @Test
++    public void testJoinMeeting() throws InterruptedException {
++        String email = Meeting_Join.getProperty("username");
++        String password = Meeting_Join.getProperty("password");
++
++        // Log in to Gmail
++        driver.findElement(By.id("identifierId")).sendKeys(email);
++        driver.findElement(By.xpath("//span[text()='Next']")).click();
++        Thread.sleep(3000);
++
++        driver.findElement(By.name("password")).sendKeys(password);
++        driver.findElement(By.xpath("//span[text()='Next']")).click();
++        Thread.sleep(8000);
++
++        // Search for the email containing the meeting link
++        WebElement searchBox = driver.findElement(By.name("q"));
++        searchBox.sendKeys("Meeting Invitation");
++        searchBox.submit();
++        Thread.sleep(5000);
++
++        // Open the first email in the search results
++        List<WebElement> emails = driver.findElements(By.xpath("//tr[@class='zA zE']"));
++        if (emails.size() > 0) {
++            emails.get(0).click();
++            Thread.sleep(3000);
++
++            // Click on the Join button in the email
++            WebElement joinButton = driver.findElement(By.xpath("//a[contains(text(), 'Join')]"));
++            joinButton.click();
++            Thread.sleep(5000);
++        } else {
++            System.out.println("No meeting invitation email found.");
++        }
++    }
++
++    @AfterClass
++    public void tearDown() {
++        driver.quit();
++    }
++}
+Index: automate/src/main/resources/par_email.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/automate/src/main/resources/par_email.properties b/automate/src/main/resources/par_email.properties
+new file mode 100644
+--- /dev/null	(date 1740308418238)
++++ b/automate/src/main/resources/par_email.properties	(date 1740308418238)
+@@ -0,0 +1,2 @@
++email1=dummy5013@gmail.com
++email2=ascendtest634@gmail.com
+\ No newline at end of file

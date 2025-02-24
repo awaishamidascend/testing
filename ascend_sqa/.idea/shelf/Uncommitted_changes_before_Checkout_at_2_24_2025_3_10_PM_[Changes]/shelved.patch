@@ -1,0 +1,304 @@
+Index: automate/src/test/java/test/automate/CreateRoomTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package test.automate;\r\n\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.chrome.ChromeDriver;\r\nimport org.testng.annotations.AfterClass;\r\nimport org.testng.annotations.BeforeClass;\r\nimport org.testng.annotations.Test;\r\nimport test.Base.BaseTest;\r\n\r\npublic class CreateRoomTest extends BaseTest{\r\n\r\n    @Test\r\n    public void testCreateRoom() throws InterruptedException {\r\n        CreateRoomPage create_room = new CreateRoomPage(driver);\r\n        // Add Selenium code here to test \"Create Room\" feature\r\n        create_room.clickCreateRoom();\r\n        create_room.Room_creation();\r\n    }\r\n\r\n//    @AfterClass\r\n//    public void tearDown() throws InterruptedException {\r\n//        Thread.sleep(20000);\r\n//        driver.quit();\r\n//    }\r\n}\r\n
+===================================================================
+diff --git a/automate/src/test/java/test/automate/CreateRoomTest.java b/automate/src/test/java/test/automate/CreateRoomTest.java
+--- a/automate/src/test/java/test/automate/CreateRoomTest.java	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/src/test/java/test/automate/CreateRoomTest.java	(date 1740058292315)
+@@ -17,9 +17,4 @@
+         create_room.Room_creation();
+     }
+ 
+-//    @AfterClass
+-//    public void tearDown() throws InterruptedException {
+-//        Thread.sleep(20000);
+-//        driver.quit();
+-//    }
+ }
+Index: automate/src/main/java/test/Base/BaseTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package test.Base;\r\n\r\nimport org.testng.annotations.AfterClass;\r\nimport org.testng.annotations.BeforeClass;\r\nimport test.utils.WebDriverManager;\r\nimport org.openqa.selenium.WebDriver;\r\n\r\npublic class BaseTest {\r\n    protected WebDriver driver;\r\n\r\n    @BeforeClass\r\n    public void setUp() {\r\n        // Get the WebDriver instance from WebDriverManager\r\n        driver = WebDriverManager.getDriver();\r\n    }\r\n\r\n//   @AfterClass\r\n//    public void tearDown() {\r\n//        // Quit the WebDriver instance\r\n//        WebDriverManager.quitDriver();\r\n//    }\r\n}
+===================================================================
+diff --git a/automate/src/main/java/test/Base/BaseTest.java b/automate/src/main/java/test/Base/BaseTest.java
+--- a/automate/src/main/java/test/Base/BaseTest.java	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/src/main/java/test/Base/BaseTest.java	(date 1740058292306)
+@@ -1,7 +1,8 @@
+ package test.Base;
+ 
+-import org.testng.annotations.AfterClass;
++import org.testng.Assert;
+ import org.testng.annotations.BeforeClass;
++import test.automate.LoginPage;
+ import test.utils.WebDriverManager;
+ import org.openqa.selenium.WebDriver;
+ 
+@@ -13,10 +14,10 @@
+         // Get the WebDriver instance from WebDriverManager
+         driver = WebDriverManager.getDriver();
+     }
++    public void testSuccessfulLogin() {
++        LoginPage loginPage = new LoginPage(driver);
++        loginPage.loginUsingConfig();
++        Assert.assertEquals(driver.getTitle(), "Tele-inspection");
++    }
+ 
+-//   @AfterClass
+-//    public void tearDown() {
+-//        // Quit the WebDriver instance
+-//        WebDriverManager.quitDriver();
+-//    }
+ }
+\ No newline at end of file
+Index: automate/src/test/java/test/automate/LoginTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package test.automate;\r\n\r\nimport org.testng.Assert;\r\nimport org.testng.annotations.Test;\r\nimport test.Base.BaseTest;\r\n\r\npublic class LoginTest extends BaseTest {\r\n\r\n    @Test\r\n    public void testSuccessfulLogin() throws InterruptedException {\r\n        driver.get(\"https://dev-taftesh.kakashi.app/admin/login\");\r\n        LoginPage loginPage = new LoginPage(driver);\r\n        // Perform login\r\n        loginPage.loginUsingConfig();\r\n\r\n        // Assertions\r\n        Assert.assertEquals(driver.getTitle(), \"Tele-inspection\");\r\n    }\r\n\r\n//    @Test\r\n//    public void testInvalidLogin() {\r\n//        driver.get(\"https://dev-taftesh.kakashi.app/admin/login\");\r\n//        LoginPage loginPage = new LoginPage(driver);\r\n//\r\n//        // Perform login with invalid credentials\r\n//        loginPage.login(\"admin@gmail.com\", \"ascendAdmin@12\");\r\n//\r\n//        // Assertions\r\n//        Assert.assertTrue(loginPage.isErrorMessageDisplayed(), \"Error message not displayed\");\r\n//    }\r\n}
+===================================================================
+diff --git a/automate/src/test/java/test/automate/LoginTest.java b/automate/src/test/java/test/automate/LoginTest.java
+--- a/automate/src/test/java/test/automate/LoginTest.java	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/src/test/java/test/automate/LoginTest.java	(date 1740057210654)
+@@ -7,8 +7,8 @@
+ public class LoginTest extends BaseTest {
+ 
+     @Test
+-    public void testSuccessfulLogin() throws InterruptedException {
+-        driver.get("https://dev-taftesh.kakashi.app/admin/login");
++    public void testSuccessfulLogin() {
++
+         LoginPage loginPage = new LoginPage(driver);
+         // Perform login
+         loginPage.loginUsingConfig();
+Index: automate/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n  xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n\r\n  <groupId>test</groupId>\r\n  <artifactId>automate</artifactId>\r\n  <version>0.0.1-SNAPSHOT</version>\r\n  <packaging>jar</packaging>\r\n\r\n  <name>automate</name>\r\n  <url>http://maven.apache.org</url>\r\n\r\n  <properties>\r\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n  </properties>\r\n\r\n  <dependencies>\r\n    <dependency>\r\n      <groupId>org.seleniumhq.selenium</groupId>\r\n      <artifactId>selenium-java</artifactId>\r\n      <version>4.28.1</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.testng</groupId>\r\n      <artifactId>testng</artifactId>\r\n      <version>7.11.0</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->\r\n    <dependency>\r\n      <groupId>io.github.bonigarcia</groupId>\r\n      <artifactId>webdrivermanager</artifactId>\r\n      <version>5.9.3</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>junit</groupId>\r\n      <artifactId>junit</artifactId>\r\n      <version>4.13.2</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n      <dependency>\r\n          <groupId>org.testng</groupId>\r\n          <artifactId>testng</artifactId>\r\n          <version>7.11.0</version>\r\n          <scope>compile</scope>\r\n      </dependency>\r\n\r\n  </dependencies>\r\n</project>\r\n
+===================================================================
+diff --git a/automate/pom.xml b/automate/pom.xml
+--- a/automate/pom.xml	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/pom.xml	(date 1740311025567)
+@@ -33,6 +33,11 @@
+       <version>5.9.3</version>
+     </dependency>
+     <dependency>
++      <groupId>com.sun.mail</groupId>
++      <artifactId>jakarta.mail</artifactId>
++      <version>2.0.1</version>
++    </dependency>
++    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <version>4.13.2</version>
+Index: automate/target/testing.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><suite name=\"TestSuite\">\r\n    <test name=\"LoginTests\">\r\n        <classes>\r\n            <class name=\"test.automate.LoginTest\"/>\r\n            <class name=\"test.automate.CreateRoomTest\"/>\r\n        </classes>\r\n    </test>\r\n</suite>
+===================================================================
+diff --git a/automate/target/testing.xml b/automate/target/testing.xml
+--- a/automate/target/testing.xml	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/target/testing.xml	(date 1740311875358)
+@@ -1,8 +1,10 @@
+ <suite name="TestSuite">
+     <test name="LoginTests">
+         <classes>
+-            <class name="test.automate.LoginTest"/>
+-            <class name="test.automate.CreateRoomTest"/>
++<!--            <class name="test.automate.LoginTest"/>-->
++<!--            <class name="test.automate.CreateRoomTest"/>-->
++            <class name="test.automate.GmailJoinMeetingTest"/>
++
+         </classes>
+     </test>
+ </suite>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"40d81fab-0e86-42b0-9753-255bff37dc81\" name=\"Changes\" comment=\"taftesh commit 1\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;MudassarIqbal-Ascend&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/awaishamidascend/ascend_sqa.git&quot;,\r\n    &quot;accountId&quot;: &quot;cb7c448d-d246-4f48-9d0b-02b6c1e57f81&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2t78fZ7HfeGyEzXUHvN4XS5LmOC\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;Application.App.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;JUnit.AppTest.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml.executor&quot;: &quot;Run&quot;,\r\n    &quot;TestNG.CreateRoomTest.executor&quot;: &quot;Run&quot;,\r\n    &quot;TestNG.CreateRoomTest.testCreateRoom.executor&quot;: &quot;Debug&quot;,\r\n    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;mudassar__taftesh&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_directory_selection&quot;: &quot;C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/src/test/java&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mudassar Iqbal/Taftesh&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml\" type=\"TestNG\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"SUITE_NAME\" value=\"$PROJECT_DIR$/automate/target/testing.xml\" />\r\n      <option name=\"TEST_OBJECT\" value=\"SUITE\" />\r\n      <properties />\r\n      <listeners />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"TestNG.C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"40d81fab-0e86-42b0-9753-255bff37dc81\" name=\"Changes\" comment=\"\" />\r\n      <created>1739691856370</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1739691856370</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"taftesh commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739799414193</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739799414193</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"taftesh commit 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739799455044</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739799455044</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"taftesh commit 1\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739799880289</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739799880289</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"taftesh commit\" />\r\n    <MESSAGE value=\"taftesh commit 1\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"taftesh commit 1\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/.idea/workspace.xml	(date 1740312065686)
+@@ -4,10 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="taftesh commit 1">
++    <list default="true" id="40d81fab-0e86-42b0-9753-255bff37dc81" name="Changes" comment="Get emails and pass from dynamically from properties files and remove hardcoded credentials..">
++      <change afterPath="$PROJECT_DIR$/automate/src/main/resources/par_email.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/GmailJoinMeetingTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/automate/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/resources/log4j.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/Base/BaseTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateRoomPage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/utils/WebDriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/utils/WebDriverManager.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/CreateRoomTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/src/test/java/test/automate/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/test/java/test/automate/LoginTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/target/classes/test/Base/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/automate/target/classes/test/Base/BaseTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/target/classes/test/automate/CreateRoomPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/automate/target/classes/test/automate/CreateRoomPage.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/target/classes/test/utils/WebDriverManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/automate/target/classes/test/utils/WebDriverManager.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/target/test-classes/test/automate/LoginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/automate/target/test-classes/test/automate/LoginTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/automate/target/testing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/automate/target/testing.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -58,6 +70,7 @@
+     &quot;TestNG.CreateRoomTest.executor&quot;: &quot;Run&quot;,
+     &quot;TestNG.CreateRoomTest.testCreateRoom.executor&quot;: &quot;Debug&quot;,
+     &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
++    &quot;TestNG.LoginTest.testSuccessfulLogin.executor&quot;: &quot;Debug&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;mudassar__taftesh&quot;,
+     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+@@ -69,6 +82,16 @@
+     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+   }
+ }</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Mudassar Iqbal\Taftesh\ascend_sqa\automate\src\main\resources" />
++      <recent name="C:\Users\Mudassar Iqbal\Taftesh\ascend_sqa\automate\src\main\java\resources" />
++      <recent name="C:\Users\Mudassar Iqbal\Taftesh\ascend_sqa\automate\resources" />
++    </key>
++    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
++      <recent name="test.automate" />
++    </key>
++  </component>
+   <component name="RunManager">
+     <configuration name="C:/Users/Mudassar Iqbal/Taftesh/ascend_sqa/automate/target/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+       <option name="SUITE_NAME" value="$PROJECT_DIR$/automate/target/testing.xml" />
+@@ -118,7 +141,31 @@
+       <option name="project" value="LOCAL" />
+       <updated>1739799880289</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="Generate Meeting tilte, participant dynamically and generate email according to number of participants.">
++      <option name="closed" value="true" />
++      <created>1739968338977</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1739968338977</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Generate Meeting tilte, participant dynamically and generate email according to number of participants.">
++      <option name="closed" value="true" />
++      <created>1739968434021</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1739968434021</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Get emails and pass from dynamically from properties files and remove hardcoded credentials..">
++      <option name="closed" value="true" />
++      <created>1740053410220</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1740053410220</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -135,6 +182,8 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="taftesh commit" />
+     <MESSAGE value="taftesh commit 1" />
+-    <option name="LAST_COMMIT_MESSAGE" value="taftesh commit 1" />
++    <MESSAGE value="Generate Meeting tilte, participant dynamically and generate email according to number of participants." />
++    <MESSAGE value="Get emails and pass from dynamically from properties files and remove hardcoded credentials.." />
++    <option name="LAST_COMMIT_MESSAGE" value="Get emails and pass from dynamically from properties files and remove hardcoded credentials.." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: automate/src/main/java/test/automate/CreateRoomPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package test.automate;\r\n\r\nimport org.openqa.selenium.JavascriptExecutor;\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.FindBy;\r\nimport org.openqa.selenium.support.PageFactory;\r\nimport org.openqa.selenium.support.ui.ExpectedConditions;\r\nimport org.openqa.selenium.support.ui.WebDriverWait;\r\nimport test.utils.ParticipantEmailReader;\r\nimport java.io.BufferedReader;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.time.Duration;\r\nimport java.util.*;\r\n\r\npublic class CreateRoomPage {\r\n    WebDriver driver;\r\n    WebDriverWait wait;\r\n\r\n    // Constructor\r\n    public CreateRoomPage(WebDriver driver) {\r\n        this.driver = driver;\r\n        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Set explicit wait\r\n        PageFactory.initElements(driver, this);\r\n    }\r\n\r\n    @FindBy(xpath = \"//*[@id=\\\"__next\\\"]/div[1]/div[1]/div/div[3]/div/ul/li[2]/a/div[2]/p\")\r\n    WebElement create_room;\r\n\r\n    @FindBy(id = \"meetingTitle-id\")\r\n    WebElement meeting_title;\r\n\r\n    @FindBy(id = \"participant-id\")\r\n    WebElement participants;\r\n\r\n    @FindBy(css = \"svg.iconify.iconify--gala.mouse-pointer\")\r\n    WebElement plus_button;\r\n\r\n    @FindBy(xpath = \"//input[@type='email']\")\r\n    List<WebElement> emailfields;\r\n\r\n    @FindBy(xpath = \"//*[@id=\\\"__next\\\"]/div[1]/div[2]/main/form/div/div[2]/button\")\r\n    WebElement room_create;\r\n\r\n    // Helper method to wait for an element\r\n    private void waitForElement(WebElement element) {\r\n        wait.until(ExpectedConditions.visibilityOf(element));\r\n        wait.until(ExpectedConditions.elementToBeClickable(element));\r\n    }\r\n\r\n    // Method to click on \"Create Room\"\r\n    public void clickCreateRoom() {\r\n        waitForElement(create_room);\r\n        create_room.click();\r\n        System.out.println(\"Clicked on 'Create Room'.\");\r\n    }\r\n\r\n    // Method to create a meeting room\r\n    public void Room_creation() {\r\n        // Step 1: Wait for and enter the meeting title\r\n        waitForElement(meeting_title);\r\n        String randomTitle = \"Meeting_\" + UUID.randomUUID().toString().substring(0, 8);\r\n        meeting_title.sendKeys(randomTitle);\r\n        System.out.println(\"Meeting title added successfully: \" + randomTitle);\r\n\r\n        // Step 2: Generate and enter participant count\r\n        waitForElement(participants);\r\n        int randomParticipants = new Random().nextInt(11) + 2;\r\n        participants.sendKeys(String.valueOf(randomParticipants));\r\n        participants.sendKeys(String.valueOf(randomParticipants));\r\n        System.out.println(\"Participant count added: \" + randomParticipants);\r\n\r\n        // Step 3: Click the plus button (Wait and Click each time)\r\n        for (int i = 1; i < randomParticipants; i++) { // Start from 1 because one field exists\r\n            waitForElement(plus_button);\r\n            plus_button.click();\r\n            System.out.println(\"Added email field \" + (i + 1));\r\n        }\r\n        wait.until(ExpectedConditions.visibilityOfAllElements(emailfields));\r\n        System.out.println(\"Total email fields found: \" + emailfields.size());\r\n\r\n        // Shuffle the email fields randomly\r\n        Collections.shuffle(emailfields);\r\n\r\n// Put emails in the first two fields from the shuffled list\r\n        List<String> emails = ParticipantEmailReader.getEmails();\r\n\r\n        // Step 1: Read emails from the file\r\n\r\n\r\n        // Step 2: Shuffle and select 2 random emails\r\n        Collections.shuffle(emails);\r\n        int emailsToAdd = 2;\r\n\r\n        // Step 3: Add emails to random fields\r\n        for (int i = 0; i < emailfields.size() && i < emailsToAdd; i++) {\r\n            emailfields.get(i).sendKeys(emails.get(i));\r\n            System.out.println(\"Added email to field \" + (i+1) + \": \" + emails.get(i));\r\n        }\r\n\r\n        // Step 4: Click on \"Create Room\"\r\n        scrollToElement(create_room);\r\n        waitForElement(room_create);\r\n        room_create.click();\r\n        System.out.println(\"Room creation process completed.\");\r\n    }\r\n    public void scrollToElement(WebElement element) {\r\n        JavascriptExecutor js = (JavascriptExecutor) driver;\r\n        js.executeScript(\"arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });\", element);\r\n        System.out.println(\"Scrolled to element.\");\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/automate/src/main/java/test/automate/CreateRoomPage.java b/automate/src/main/java/test/automate/CreateRoomPage.java
+--- a/automate/src/main/java/test/automate/CreateRoomPage.java	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/src/main/java/test/automate/CreateRoomPage.java	(date 1740056966766)
+@@ -42,6 +42,8 @@
+ 
+     @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/div[2]/main/form/div/div[2]/button")
+     WebElement room_create;
++    @FindBy(xpath ="//*[@id=\"__next\"]/div[1]/div[2]/main/div/div[1]/table/thead/tr/th[1]")
++    WebElement Room_Page;
+ 
+     // Helper method to wait for an element
+     private void waitForElement(WebElement element) {
+@@ -93,10 +95,17 @@
+         Collections.shuffle(emails);
+         int emailsToAdd = 2;
+ 
+-        // Step 3: Add emails to random fields
+-        for (int i = 0; i < emailfields.size() && i < emailsToAdd; i++) {
+-            emailfields.get(i).sendKeys(emails.get(i));
+-            System.out.println("Added email to field " + (i+1) + ": " + emails.get(i));
++        for (int i = 0; i < emailfields.size(); i++) {
++            if (i < emailsToAdd && i < emails.size()) {
++                // Use email from file
++                emailfields.get(i).sendKeys(emails.get(i));
++                System.out.println("Added email to field " + (i + 1) + ": " + emails.get(i));
++            } else {
++                // Generate a random email for remaining fields
++                String randomEmail = "random" + UUID.randomUUID().toString().substring(0, 8) + "@example.com";
++                emailfields.get(i).sendKeys(randomEmail);
++                System.out.println("Added generated email to field " + (i + 1) + ": " + randomEmail);
++            }
+         }
+ 
+         // Step 4: Click on "Create Room"
+@@ -104,6 +113,7 @@
+         waitForElement(room_create);
+         room_create.click();
+         System.out.println("Room creation process completed.");
++        waitForElement(Room_Page);
+     }
+     public void scrollToElement(WebElement element) {
+         JavascriptExecutor js = (JavascriptExecutor) driver;
+Index: automate/src/main/java/test/utils/WebDriverManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package test.utils;\r\n\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.chrome.ChromeDriver;\r\n\r\npublic class WebDriverManager {\r\n    private static WebDriver driver;\r\n\r\n\r\n    // Private constructor to prevent instantiation\r\n    private WebDriverManager() {}\r\n\r\n    // Method to get the WebDriver instance\r\n    public static WebDriver getDriver() {\r\n        if (driver == null) {\r\n            //System.setProperty(\"webdriver.chrome.driver\", \"path/to/chromedriver\");\r\n            driver = new ChromeDriver();\r\n            driver.manage().window().maximize();\r\n        }\r\n        return driver;\r\n    }\r\n\r\n    // Method to quit the WebDriver instance\r\n    public static void quitDriver() {\r\n        if (driver != null) {\r\n            driver.quit();\r\n            driver = null; // Reset the driver instance\r\n        }\r\n    }\r\n}
+===================================================================
+diff --git a/automate/src/main/java/test/utils/WebDriverManager.java b/automate/src/main/java/test/utils/WebDriverManager.java
+--- a/automate/src/main/java/test/utils/WebDriverManager.java	(revision 44afd37ae5d4bcd4dc919b9fc41a99551e6835b6)
++++ b/automate/src/main/java/test/utils/WebDriverManager.java	(date 1740057288137)
+@@ -2,6 +2,10 @@
+ 
+ import org.openqa.selenium.WebDriver;
+ import org.openqa.selenium.chrome.ChromeDriver;
++import org.testng.annotations.AfterClass;
++import org.testng.annotations.AfterMethod;
++import org.testng.annotations.BeforeClass;
++import org.testng.annotations.BeforeMethod;
+ 
+ public class WebDriverManager {
+     private static WebDriver driver;
+@@ -11,16 +15,19 @@
+     private WebDriverManager() {}
+ 
+     // Method to get the WebDriver instance
++    @BeforeMethod
+     public static WebDriver getDriver() {
+         if (driver == null) {
+             //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+             driver = new ChromeDriver();
+             driver.manage().window().maximize();
++            driver.get("https://dev-taftesh.kakashi.app/admin/login");
+         }
+         return driver;
+     }
+ 
+     // Method to quit the WebDriver instance
++    @AfterMethod
+     public static void quitDriver() {
+         if (driver != null) {
+             driver.quit();
+diff --git a/automate/resources/log4j.properties b/automate/src/main/resources/log4j.properties
+rename from automate/resources/log4j.properties
+rename to automate/src/main/resources/log4j.properties
