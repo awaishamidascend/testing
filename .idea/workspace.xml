@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cfb03e0-0e0a-45c6-894b-e00377200ef7" name="Changes" comment="24 Feb 2025 Part 1">
-      <change afterPath="$PROJECT_DIR$/automate/selenium-java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ascend_sqa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ascend_sqa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/automate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/automate/AllTicketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/AllTicketPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +64,7 @@
     "git-widget-placeholder": "khadija__NHCC",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HamidAwais(Ascend)/Downloads/ml-llm-252.594.zip",
+    "last_opened_file_path": "C:/Users/HamidAwais(Ascend)/IdeaProjects/ascend_sqa/automate",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -79,8 +73,10 @@
 }]]></component>
   <component name="RunManager" selected="Application.AllTicketPage">
     <configuration name="AllTicketPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="23" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="test.automate.AllTicketPage" />
-      <module name="ascend_sqa" />
+      <module name="automate" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.automate.*" />
