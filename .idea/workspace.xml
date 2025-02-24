@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cfb03e0-0e0a-45c6-894b-e00377200ef7" name="Changes" comment="20 Feb 2025 Part 3">
+    <list default="true" id="7cfb03e0-0e0a-45c6-894b-e00377200ef7" name="Changes" comment="24 Feb 2025 Part 1">
+      <change afterPath="$PROJECT_DIR$/automate/selenium-java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ascend_sqa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ascend_sqa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/automate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/automate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/CreateTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automate/src/main/java/test/automate/AllTicketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/automate/src/main/java/test/automate/AllTicketPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +50,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AllTicketPage (1).executor": "Run",
     "Application.AllTicketPage.executor": "Run",
     "Application.CreateTicket.executor": "Run",
+    "Application.Dashboard.executor": "Run",
+    "Application.ForgetPassword.executor": "Run",
+    "Application.Main.executor": "Run",
     "JUnit..executor": "Run",
     "JUnit.AppTest.executor": "Run",
     "JUnit.Unnamed.executor": "Run",
@@ -58,20 +66,35 @@
     "JUnit.projectsTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "khadija__NHCC",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HamidAwais(Ascend)/IdeaProjects/ascend_sqa",
+    "last_opened_file_path": "C:/Users/HamidAwais(Ascend)/Downloads/ml-llm-252.594.zip",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.CreateTicket">
+  <component name="RunManager" selected="Application.AllTicketPage">
     <configuration name="AllTicketPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.automate.AllTicketPage" />
-      <module name="selenium-java" />
+      <module name="ascend_sqa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.automate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTicketPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-23" />
+      <option name="MAIN_CLASS_NAME" value="test.automate.AllTicketPage" />
+      <module name="ascend_sqa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.automate.*" />
@@ -84,7 +107,7 @@
     </configuration>
     <configuration name="CreateTicket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.automate.CreateTicket" />
-      <module name="selenium-java" />
+      <module name="ascend_sqa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.automate.*" />
@@ -95,65 +118,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="selenium-java" />
+    <configuration name="Dashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.automate.Dashboard" />
+      <module name="ascend_sqa" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="efficonx_login.*" />
+          <option name="PATTERN" value="test.automate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="efficonx_login" />
-      <option name="MAIN_CLASS_NAME" value="efficonx_login.AppTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="efficonXLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="selenium-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="efficonx_login.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="efficonx_login" />
-      <option name="MAIN_CLASS_NAME" value="efficonx_login.efficonXLoginTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="projectsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="selenium-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="efficonx_projects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="efficonx_projects" />
-      <option name="MAIN_CLASS_NAME" value="efficonx_projects.projectsTest" />
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ascend_sqa" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AllTicketPage" />
       <item itemvalue="Application.CreateTicket" />
-      <item itemvalue="JUnit.efficonXLoginTest" />
-      <item itemvalue="JUnit.projectsTest" />
-      <item itemvalue="JUnit.AppTest" />
+      <item itemvalue="Application.AllTicketPage" />
+      <item itemvalue="Application.Dashboard" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CreateTicket" />
         <item itemvalue="Application.AllTicketPage" />
-        <item itemvalue="JUnit.efficonXLoginTest" />
-        <item itemvalue="JUnit.projectsTest" />
-        <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="Application.CreateTicket" />
+        <item itemvalue="Application.Dashboard" />
+        <item itemvalue="Application.AllTicketPage" />
       </list>
     </recent_temporary>
   </component>
@@ -177,8 +173,24 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12 Jan 2025" />
     <option name="LAST_COMMIT_MESSAGE" value="12 Jan 2025" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ascend_sqa$AllTicketPage.ic" NAME="AllTicketPage Coverage Results" MODIFIED="1740383855888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>test.automate.*</FILTER>
+    </SUITE>
   </component>
 </project>

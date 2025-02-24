@@ -12,5 +12,6 @@
     <orderEntry type="library" name="Maven: io.github.bonigarcia:webdrivermanager:5.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:4.19.1" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:4.19.1" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chromium-driver:4.19.1" level="project" />
   </component>
 </module>

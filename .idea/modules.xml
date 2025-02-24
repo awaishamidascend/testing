@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ascend_sqa.iml" filepath="$PROJECT_DIR$/ascend_sqa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/automate/selenium-java.iml" filepath="$PROJECT_DIR$/automate/selenium-java.iml" />
     </modules>
   </component>
 </project>
