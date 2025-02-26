@@ -22,8 +22,19 @@ public class webdriverSetup {
     public void webdriverSetup() {
         try {
             System.out.println("Setting up WebDriver...");
-            String fireFoxDriverPath = "src/test/resources/drivers/geckodriver.exe"; // Adjust path as necessary
+
+            // Detecting the operating system to set the correct driver path
+            String os = System.getProperty("os.name").toLowerCase();
+            String fireFoxDriverPath;
+
+            if (os.contains("win")) {
+                fireFoxDriverPath = "src/test/resources/drivers/geckodriver.exe"; // Windows path
+            } else {
+                fireFoxDriverPath = "/usr/bin/geckodriver"; // Linux path for Jenkins
+            }
+
             System.setProperty("webdriver.gecko.driver", fireFoxDriverPath);
+            System.out.println("Using Geckodriver path: " + fireFoxDriverPath);
 
             // Read headless mode from system properties
             boolean isHeadless = Boolean.parseBoolean(System.getProperty("headless", "false"));
@@ -41,6 +52,7 @@ public class webdriverSetup {
             System.out.println("WebDriver initialized: " + (driver != null));
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("WebDriver initialization failed.");
         }
     }
 
