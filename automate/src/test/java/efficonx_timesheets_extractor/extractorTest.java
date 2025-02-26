@@ -43,7 +43,7 @@ public class extractorTest {
 
     public static Stream<efficonXLoginVO> setUpData() {
         Gson gson = new Gson();
-        try (FileReader reader = new FileReader("jsons/Users/All_Users1.json")) {
+        try (FileReader reader = new FileReader("jsons/Users/Users.json")) {
             efficonXLoginVO wrapper = gson.fromJson(reader, efficonXLoginVO.class);
             return wrapper.getUsers().stream();
         } catch (IOException e) {
